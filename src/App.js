@@ -1,9 +1,48 @@
 import {useState} from 'react';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
+import Time from './componentes/Time';
 
 
 function App() {
+
+  const times = [
+    {
+      nome:'Programação',
+      corPrimaria: '#57c278',
+      corSecundaria: '#d9f7e9'
+    },
+    {
+      nome:'Front-End',
+      corPrimaria: '#57c278',
+      corSecundaria: '#d9f7e9'
+    },    
+    {
+      nome:'Data Science',
+      corPrimaria: '#57c278',
+      corSecundaria: '#d9f7e9'
+    },    
+    {
+      nome:'Devops',
+      corPrimaria: '#57c278',
+      corSecundaria: '#d9f7e9'
+    },    
+    {
+      nome:'UX e Design',
+      corPrimaria: '#57c278',
+      corSecundaria: '#d9f7e9'
+    },    
+    {
+      nome:'Mobile',
+      corPrimaria: '#57c278',
+      corSecundaria: '#d9f7e9'
+    },    
+    {
+      nome:'Inovação e Gestão',
+      corPrimaria: '#57c278',
+      corSecundaria: '#d9f7e9'
+    }        
+  ]
 
   const [colaboradores, setColaboradores] = useState([]);
 
@@ -15,6 +54,9 @@ function App() {
     <div className="App">
       <Banner/>
       <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado (colaborador)}/>      
+      
+      {times.map(time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
+      
     </div>
   );
 }
