@@ -28,6 +28,10 @@ const Formulario = () => {
             imagem,
             time
     });
+    setNome('')
+    setCargo('')
+    setImagem('')
+    setTime('')
 }
 
     return (
